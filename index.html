@@ -1,0 +1,42 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Tiburon Golf Club · Concept</title><style>
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,Arial,sans-serif;color:#1d2a1d;background:#f4f6f2;border-top:6px solid #D22B2B}
+.hero{background:linear-gradient(135deg,#0f3d22,#1f6b3a);color:#fff;text-align:center;padding:28px 18px}.hero img{max-width:220px;background:#fff;border-radius:10px;padding:8px}
+.hero h1{margin:12px 0 4px;font-size:1.8rem}.hero p{margin:4px 0;opacity:.9}.tag{display:inline-block;background:#D22B2B;padding:3px 10px;border-radius:20px;font-size:.8rem;margin-top:8px}
+nav{display:flex;overflow-x:auto;gap:8px;padding:10px;background:#fff;position:sticky;top:0;box-shadow:0 2px 4px #0002}nav a{white-space:nowrap;padding:6px 12px;border-radius:20px;background:#e7efe5;color:#0f3d22;text-decoration:none;font-size:.9rem}
+section{background:#fff;margin:14px 12px;padding:16px;border-radius:12px;box-shadow:0 1px 3px #0001}h2{margin:0 0 6px;color:#0f3d22}.cap{font-size:.85rem;color:#666;margin:0 0 10px}
+label{display:block;font-size:.85rem;margin:8px 0 3px;font-weight:600}input,select,textarea{width:100%;padding:10px;border:1px solid #ccc;border-radius:8px;font-size:1rem}
+.bays{display:flex;gap:8px}.bays button,.slots button{flex:1;padding:12px;border:2px solid #1f6b3a;background:#fff;border-radius:8px;font-size:1rem;color:#0f3d22}.sel{background:#1f6b3a!important;color:#fff!important}
+.slots{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}.slots button{padding:9px;font-size:.9rem}
+.go{width:100%;margin-top:12px;padding:14px;background:#D22B2B;color:#fff;border:0;border-radius:10px;font-size:1.05rem;font-weight:700}
+.ok{display:none;margin-top:10px;padding:12px;background:#e6f4ea;border-left:4px solid #1f6b3a;border-radius:6px}
+table{width:100%;border-collapse:collapse;font-size:.9rem}th,td{padding:7px;border-bottom:1px solid #eee;text-align:left}th{background:#0f3d22;color:#fff}
+.sample{display:inline-block;background:#fff3cd;color:#7a5b00;font-size:.75rem;padding:2px 8px;border-radius:10px;font-weight:700}
+.dash{background:#0f1e3d;color:#fff}.dash h2{color:#fff}.dash .cap{color:#bcc6dd}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:10px 0}.card{background:#1b2d55;border-radius:8px;padding:10px;text-align:center}.card b{display:block;font-size:1.5rem}.card span{font-size:.75rem}
+.feed div{background:#1b2d55;border-radius:6px;padding:8px;margin:5px 0;font-size:.85rem}.vel{color:#D22B2B;font-weight:bold}
+footer{text-align:center;padding:16px;font-size:.85rem;color:#555;border-top:3px solid #D22B2B;background:#fff}
+</style></head><body>
+<div class="hero"><img src="images/logo.png" alt="Tiburon Golf Club logo"><h1>Tiburon Golf Club</h1><p>27 holes · Shark's Sports Bar &amp; Grill · Banquets &amp; Weddings</p><p>10302 S 168th St, Omaha, NE 68136</p><span class="tag">Concept by All BIG Analytics</span></div>
+<nav><a href="#sim">Sim Bays</a><a href="#league">Leagues</a><a href="#events">Events</a><a href="#hours">Hours</a><a href="#dash">The Dash</a></nav>
+<section id="sim"><h2>Book a Simulator Bay</h2><p class="cap">Two GC Hawk simulators. Pick a bay, date and time.</p>
+<label>Bay</label><div class="bays"><button class="bay sel" type="button">Bay 1</button><button class="bay" type="button">Bay 2</button></div>
+<label>Date</label><input type="date" id="sd"><label>Time</label><div class="slots" id="slots"></div>
+<button class="go" onclick="book()">Book</button><div class="ok" id="simok"></div></section>
+<section id="league"><h2>League Signup</h2><p class="cap">Teams register online. No more email back-and-forth.</p>
+<form onsubmit="return done(this,'Team registered! Your captain will get a confirmation email.')"><label>Team name</label><input required><label>Captain name</label><input required><label>Captain email</label><input type="email" required><label>League</label><select><option>Winter Sim League</option><option>Summer Course League</option></select><button class="go">Sign Up Team</button><div class="ok"></div></form>
+<h3>Standings <span class="sample">SAMPLE DATA</span></h3><table><tr><th>#</th><th>Team</th><th>W-L</th><th>Pts</th></tr><tr><td>1</td><td>Team A</td><td>6-1</td><td>18</td></tr><tr><td>2</td><td>Team B</td><td>5-2</td><td>15</td></tr><tr><td>3</td><td>Team C</td><td>3-4</td><td>9</td></tr><tr><td>4</td><td>Team D</td><td>1-6</td><td>3</td></tr></table></section>
+<section id="events"><h2>Banquets, Weddings &amp; Outings</h2><p class="cap">Goes straight to your team's Dash.</p>
+<form onsubmit="return done(this,'Thanks! Your inquiry is in. Our events team will reach out soon.')"><label>Event type</label><select><option>Wedding</option><option>Banquet / Business Meeting</option><option>Golf Outing</option></select><label>Name</label><input required><label>Email or phone</label><input required><label>Preferred date</label><input type="date"><label>Guests / golfers</label><input type="number" min="1"><label>Details</label><textarea rows="3"></textarea><button class="go">Send Inquiry</button><div class="ok"></div></form></section>
+<section id="hours"><h2>Hours: One Source of Truth</h2><p class="cap">Update once in The Dash, and the website, Google and listings all match.</p>
+<table><tr><th>Area</th><th>Hours</th></tr><tr><td>Pro Shop / Course</td><td><i>Set by Tiburon</i></td></tr><tr><td>Sim Bays</td><td><i>Set by Tiburon</i></td></tr><tr><td>Shark's Bar &amp; Grill</td><td><i>Set by Tiburon</i></td></tr></table>
+<p class="cap" style="margin-top:8px">Pro Shop 402-895-2688 ext 1 · Banquet/Weddings/Golf 402-896-2688 ext 2</p></section>
+<section id="dash" class="dash"><h2>Behind it: The Dash</h2><p class="cap">The ABA <span class="vel">Velocity</span> Dash is a business operations hub built around how your team actually works. Bookings, leagues and events all land in one place.</p>
+<span class="sample">EXAMPLE DATA</span><div class="cards"><div class="card"><b>7</b><span>Sim bookings today</span></div><div class="card"><b>3</b><span>New league teams</span></div><div class="card"><b>2</b><span>Event inquiries</span></div></div>
+<div class="feed"><div>🏌️ Bay 1, 5:00 PM, booked online</div><div>🏆 "Team C" registered for Winter Sim League</div><div>💍 Wedding inquiry, 120 guests, June date</div><div>🏌️ Bay 2, 7:00 PM, booked online</div><div>📋 Golf outing inquiry, 36 golfers</div></div></section>
+<footer>Concept mockup by All <b style="color:#D22B2B">BIG</b> Analytics · Demo only, nothing is submitted</footer>
+<script>
+document.querySelectorAll('.bay').forEach(b=>b.onclick=()=>{document.querySelectorAll('.bay').forEach(x=>x.classList.remove('sel'));b.classList.add('sel')});
+const sl=document.getElementById('slots');['10:00 AM','12:00 PM','2:00 PM','4:00 PM','6:00 PM','8:00 PM'].forEach((t,i)=>{const b=document.createElement('button');b.type='button';b.textContent=t;if(i==3)b.classList.add('sel');b.onclick=()=>{sl.querySelectorAll('button').forEach(x=>x.classList.remove('sel'));b.classList.add('sel')};sl.appendChild(b)});
+const sd=document.getElementById('sd');sd.valueAsDate=new Date();
+function book(){const bay=document.querySelector('.bay.sel').textContent,t=sl.querySelector('.sel').textContent,d=new Date(sd.value+'T12:00').toLocaleDateString(undefined,{weekday:'short',month:'short',day:'numeric'});const o=document.getElementById('simok');o.innerHTML='✅ <b>You\'re booked!</b> '+bay+' · '+d+' · '+t+'. Confirmation #TGC-'+Math.floor(1000+Math.random()*9000)+' (demo).';o.style.display='block'}
+function done(f,m){const o=f.querySelector('.ok');o.textContent='✅ '+m+' (demo)';o.style.display='block';f.querySelector('.go').disabled=true;return false}
+</script></body></html>
